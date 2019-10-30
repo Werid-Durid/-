@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日常放松小网页</title>
+	<script type="text/javascript" src="diary.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/main.js"></script>
+	<!-- <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css"> -->
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<!-- <script type="text/javascript" src="FileSaver.js/src/FileSaver.js"></script> -->
+	<script src="js/jquery-3.4.1.min.js"></script>
+	
+	
+
+	<!-- <script type="text/javascript>" src="diary.json"></script> -->
+
+</head>
+<body onload="loadall();">
+	<!-- 网页一级头部 -->
+	<div id="head">
+
+		<!-- 网页顶部大标题 -->
+	<h3 id="headtitle"><a href="javascript:location.reload();">&nbsp&nbsp欢&nbsp迎&nbsp回&nbsp来</a></h3>
+	
+		<!-- 搜索日记系统 -->
+	<div>
+
+		<input type="text" name="search" id="searchtext" placeholder="搜索内容" value="" maxlength="26em"/>
+		
+		<input type="button" name="submit" id="headbutton" onclick="sousuo();" value="搜索你的日记"/>
+	
+	</div>
+
+	</div>
+	<!-- 结束一级头部 -->
+
+	<!-- 网页二级头部 -->
+	<div id="header">
+		<!-- 头部标签 -->
+		<ul id="header_nav">
+		<span style="color:rgba(13, 93, 214, 0.829);">
+			<li>
+					
+				<a href="main.html">
+				    	<i class="fa fa-book" aria-hidden="true"> 我的日记</a></i>	
+			</li>
+
+			<li>
+					
+				<a href="newpassage.html" target="_blank">
+						<i class="fa fa-pencil-square-o" aria-hidden="true"> 新随笔</a></i>
+			</li>
+            <!--
+			<li>
+					<i class="fa fa-bars" aria-hidden="true">
+						<a> 分类</a></i>
+			</li> -->
+
+			<li>
+				<a href="gallery.html">
+					<i class="fa fa-picture-o" aria-hidden="true"> 图库</a></i>				
+			</li>
+
+			<!-- <li>
+					<i class="fa fa-cog" aria-hidden="true">
+						<a>菜单</a></i>				
+			</li> -->
+
+		</span>
+		</ul>
+
+		<br>
+				<p style="text-align:right; color: rgba(10, 0, 120, 0.925); position: relative; left: -100px; height: 100%; width:20%; float: right;" id="last7days"></p>
+	</div>
+
+<!-- <h2>name</h2> -->
+
+	<!-- 网页主体应该是时间轴 -->
+	<div id="main">
+		<!-- <div id="eachdiary">
+		
+
+		</div> -->
+
+	<!-- <div class="diarytitle">
+				<a id="diarytitle_a"> &nbsp&nbsp&nbsp </a>
+			</div> -->
+
+		<!-- 这里是写日记的部分，准备用在新随笔网页里，在主页先不显示，用visibility hidden处理
+		到时候再统一弄出来 -->
+	<!-- <div id="artcle">
+			<p>The best prepration for tormorrow is doing your best today.</p>
+			<textarea id="file" value="" placeholder="what is your best today?"></textarea></br>
+			<input type="button" onclick="testdaochu(file);" value="点击保存你的日记">
+	</div> -->
+
+			<!--其实是about me -->
+		<div id="main_self">
+			<img src="img/me.png" id="main_img" onclick="javascript:Go();"/>
+			<p id="main_self_p" ></p>
+			
+			<!-- 各类图标支持自动添加 -->
+
+			<!-- font-awesome超链接框架 -->
+			<!-- <a href="url" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa 选择你想用的font-awesome图标 fa-stack-1x"></i>
+					
+				  </span>
+			</a> -->
+
+			<!-- 下是自定义图标框架 -->
+			<!-- <a href="url" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<img src="src" style="margin-left: 8px;margin-top: 6px; width:26px; height:26px; "  >
+					
+				  </span>
+			</a> -->
+
+			<div id="main_nav" style="text-align: center;">
+			<!-- 推特 -->
+			<a href="http:\\www.baidu.com" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-twitter fa-stack-1x"></i>
+					
+				  </span>
+			</a>
+			<!-- github -->
+			<a href="https://github.com" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<i class="fa fa-github fa-stack-1x"></i>
+					
+				  </span>
+			</a>
+			<!-- bilibili -->
+			<a href="http:\\www.bilibili.com" target="_blank">
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square-o fa-stack-2x"></i>
+					<img src="img/bilibili.jpg" style="margin-top: 6px; width:26px; height:26px; "  >
+					
+				  </span>
+			</a>
+
+			</div>
+		<div style="text-align: center;">
+
+<!-- ---------------------------------------------------------------- -->
+<!-- ！！！！！！！！！！ -->
+	<!-- 就用这个遍历文件夹 -->
+
+
+<!-- 			
+				<input type="button" value="hsjdfhj" onclick="test2()">
+				<input type="file" id="loadinput"> -->
+
+        <label id="filegetlabel" for="fileget">
+		<input type="button" id="btn" value="点我上传" >
+		<input type="file" id="fileget"  multiple webkitdirectory onchange="bianli();"> <!-- 只能上传单个文件 -->  
+		</label>
+	
+
+		<!-- 遍历文件的按钮结束 -->
+		</div>
+
+				<button onclick="chuangjian();" >测试各种bug</button>
+
+		</div>
+		<!-- mainself结束 -->	
+
+
+
+			
+<!-- 		
+		<div id="zuihouyiyebutton">
+
+
+		</div> -->
+
+	</div>
+	<!-- 主体结束 -->
+
+
+
+
+	<!-- 页尾的制作人名单 -->
+<div id="beforefooter" >
+	<!-- <div style="text-align: center;">
+	<input type="button" value="点击进入下一页" style="height:25px;" >		
+	</div> -->
+</div>
+
+	<!-- 隐藏链接到图片作为跳板 -->
+	<div>
+				<label for="fileinp" style="visibility: hidden;">
+				<input type="button" id="btn" value="点我上传" >
+				<input type="file" id="fileinp" onchange="changepic(this);">
+				</label>
+	</div>
+<!-- <object data="jk.class" style="width:400px; height:400px;"></object> -->
+
+
+	<!-- 底部 -->
+	<div id="footer">
+		<ul id="footer_ul">
+			<div>
+				
+	<p id="creat_p" >Design: Tsy<br>@Power By H5</p>
+			</div>
+
+		</ul>
+	</div>
+
+
+
+ 
+
+</body>
+</html>
+
+
+
+		<!-- <input type="button" value="jshdjkhfjshdjkfh" onclick="loadXMLDoc();" /> -->
+		
+		<!-- <input id="main_text" type="file" value="点击修改你的头像" onchange="changepic(this);"/> -->
+		<!-- <button type="button" onclick="showtext();">测试显示文档</button>
+		<h1 id="show1" style="visibility:hidden; color:red;">fsjkdfkjsldjk</h1> -->
+
+
+<!-- <script type="text/javascript">
+		var blob = new Blob(["欢迎访问 hangge.com"], {type: "text/plain;charset=utf-8"});
+		saveAs(blob, "文件导出测试.txt");
+	  </script> -->

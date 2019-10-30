@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>你的图库</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/main.js"></script>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+</head>
+
+<!-- 这个bgcolor是有用的 -->
+<body bgcolor="#000">
+
+    <!-- 右侧 -->
+    <div id="gallery_main">
+                <header id="gallery_header">
+
+                <h1>你的图库</h1>
+
+                <p>author : <a href="main.html" style="border-bottom: none;">tsy</a></p>
+
+                <ul class="gallery_icons">
+
+                    <!-- home标签 -->
+                    <li style="float: right;">
+                        <a title="home" href="main.html" rel="noopener">
+                            <i class="icon fa fa-home"></i>
+                        </a>
+                    </li>     
+
+                    <!-- github图标                -->
+                    <li >
+                        <a title="github" href="https://github.com/" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                </ul>
+                    <div style="text-align: right; position: relative ; top: 20px;">
+
+                    <!-- ---------------------------------------------------------------- -->
+                    <!-- ！！！！！！！！！！ -->
+                        <!-- 就用这个遍历文件夹 -->
+                    
+                            <label id="filegetlabel" for="imgfileget">
+                            <input type="button" id="btn" value="点我上传" >
+                            <input type="file" id="imgfileget"  multiple webkitdirectory onchange="bianligallery();"> <!-- 只能上传单个文件 -->  
+                            </label>
+                        
+                            </div>
+            </header>
+
+
+    </div>
+
+    <!-- 这个才是图片 -->
+    <div id="eachpicture">
+
+    </div>
+    
+    <div id="qianjiantou" onclick="shangyigeimg();"> 
+
+    </div>
+    <div id="houjiantou" onclick="houyigeimg();"> 
+
+    </div>
+    <div id="guanbijiantou" onclick="hideorshow();"> 
+
+    </div>
+
+
+</body>
+</html>

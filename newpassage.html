@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>写点什么随你</title>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script type="text/javascript" src="FileSaver.js/src/FileSaver.js"></script>
+	<script type="text/javascript" src="diary.js"></script>
+    
+    
+    
+
+</head>
+<body onload="newpassageload();">
+    	<!-- 网页一级头部 -->
+
+	<!-- 结束一级头部 -->
+
+	<!-- 网页二级头部 -->
+	<div id="header">
+        <!-- 头部标签 -->
+
+        
+        <ul id="header_nav" style=" position: relative; left: 400x;">
+            
+        <span style="color:rgba(13, 93, 214, 0.829);">
+            
+			<li style="margin-left:150px;">
+					<i class="fa fa-book" aria-hidden="true">
+						<a href="main.html" target="_blank">我的日记</a></i>	
+			</li>
+
+			<li>
+					<i class="fa fa-pencil-square-o" aria-hidden="true">
+						<a href="newpassage.html"> 新随笔</a></i>
+			</li>
+            <!--
+			<li>
+					<i class="fa fa-bars" aria-hidden="true">
+						<a> 分类</a></i>
+			</li> -->
+
+			<li>
+					<i class="fa fa-picture-o" aria-hidden="true">
+						<a href="gallery.html"> 图库</a></i>				
+			</li>
+            
+            <!-- 
+    		<li>
+					<i class="fa fa-cog" aria-hidden="true">
+						<a>菜单</a></i>				
+			</li> -->
+
+		</span>
+        </ul>
+        
+    </div>
+
+	<div id="main" style="height: 650px !important;">
+
+
+    		<!-- 这里是写日记的部分，准备用在新随笔网页里，在主页先不显示，用visibility hidden处理
+		到时候再统一弄出来 -->
+	<div id="artcle">
+            <textarea maxlength="10" style="height: 40px !important;width: 280px !important; line-height: 150%; text-align: center; position: relative;left: 50px; margin-top: 0px; " id="filetitle" placeholder="title" ></textarea>
+            <textarea id="file"  value="" placeholder="what is your best today?"></textarea></br>
+            
+            <input type="button" onclick="testdaochu(file,filetitle);" value="点击保存你的日记">
+    </br>
+</br>
+</br>
+
+                <!-- <p>The best prepration for tormorrow is doing your best today.</p> -->
+                <!-- <p>The best prepration for tormorrow is doing your best today.</p> -->
+	</div>
+
+    <div id="main_self" style="position: absolute; left:1070px !important; top:150px !important;">
+        <img src="img/me.png" id="main_img" onclick="javascript:Go();"/>
+        <p id="main_self_p" ></p>
+        
+        <!-- 各类图标支持自动添加 -->
+
+        <!-- font-awesome超链接框架 -->
+        <!-- <a href="url" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa 选择你想用的font-awesome图标 fa-stack-1x"></i>
+                
+              </span>
+        </a> -->
+
+        <!-- 下是自定义图标框架 -->
+        <!-- <a href="url" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <img src="src" style="margin-left: 8px;margin-top: 6px; width:26px; height:26px; "  >
+                
+              </span>
+        </a> -->
+                    
+
+        <div style="text-align: center;">
+        <!-- 推特 -->
+
+
+        <div id="main_nav" >
+            
+        <a href="http:\\www.baidu.com" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+                
+              </span>
+        </a>
+        <!-- github -->
+        <a href="https://github.com" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <i class="fa fa-github fa-stack-1x"></i>
+                
+              </span>
+        </a>
+        <!-- bilibili -->
+        <a href="http:\\www.bilibili.com" target="_blank">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-square-o fa-stack-2x"></i>
+                <img src="img/bilibili.jpg" style="margin-top: 6px; width:26px; height:26px; "  >
+                
+              </span>
+        </a>
+        </div>
+        
+    
+        </div>
+        </div>
+
+
+    </div>
+
+    <!-- 底部标签 -->
+	<div id="footer">
+		<ul id="footer_ul">
+			<div>
+	<p id="creat_p">Created By Tsy<br>驱动于html5</p>
+			</div>
+
+		</ul>
+	</div>
+
+
+
+</body>
+</html>
